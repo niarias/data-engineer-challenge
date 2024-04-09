@@ -1,0 +1,12 @@
+{
+    "origin_path": "scripts/data/input/nyse_2012.csv",
+    "final_path": "scripts/data/output",
+    "metadata": {
+      "type": "delimited",
+      "additional_data": {
+        "partition_date": "2024-04-05"
+      },
+      "delimiter": ","
+    },
+    "partition_by": "transaction_date"
+}

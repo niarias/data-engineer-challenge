@@ -1,0 +1,14 @@
+{
+  "origin_path": "/content/nyse_2012_ts.txt",
+  "final_path": "/content",
+  "metadata": {
+    "type": "fixed_width",
+    "columns_widths": [6, 24, 7, 7, 7, 7, 7],
+    "columns_name": ["stock", "transaction_date", "open_price", "close_price", "max_price", "min_price", "variation"],
+    "columns_type": ["string", "timestamp", "float", "float", "float", "float", "float"],
+    "additional_data": {
+      "partition_date": "2024-04-05"
+    }
+  },
+  "partition_by": "transaction_date"
+}

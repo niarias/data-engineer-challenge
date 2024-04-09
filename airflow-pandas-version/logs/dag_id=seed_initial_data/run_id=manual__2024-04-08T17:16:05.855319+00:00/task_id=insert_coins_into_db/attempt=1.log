@@ -1,0 +1,25 @@
+[2024-04-08T17:16:07.838+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: seed_initial_data.insert_coins_into_db manual__2024-04-08T17:16:05.855319+00:00 [queued]>
+[2024-04-08T17:16:07.848+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: seed_initial_data.insert_coins_into_db manual__2024-04-08T17:16:05.855319+00:00 [queued]>
+[2024-04-08T17:16:07.849+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2024-04-08T17:16:07.856+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): insert_coins_into_db> on 2024-04-08 17:16:05.855319+00:00
+[2024-04-08T17:16:07.860+0000] {standard_task_runner.py:57} INFO - Started process 10195 to run task
+[2024-04-08T17:16:07.864+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'seed_initial_data', 'insert_coins_into_db', 'manual__2024-04-08T17:16:05.855319+00:00', '--job-id', '25', '--raw', '--subdir', 'DAGS_FOLDER/file_procesor_dag.py', '--cfg-path', '/tmp/tmpxama52zq']
+[2024-04-08T17:16:07.868+0000] {standard_task_runner.py:85} INFO - Job 25: Subtask insert_coins_into_db
+[2024-04-08T17:16:07.929+0000] {task_command.py:416} INFO - Running <TaskInstance: seed_initial_data.insert_coins_into_db manual__2024-04-08T17:16:05.855319+00:00 [running]> on host 2c889d8e7a74
+[2024-04-08T17:16:07.998+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='seed_initial_data' AIRFLOW_CTX_TASK_ID='insert_coins_into_db' AIRFLOW_CTX_EXECUTION_DATE='2024-04-08T17:16:05.855319+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-04-08T17:16:05.855319+00:00'
+[2024-04-08T17:16:08.002+0000] {logging_mixin.py:154} INFO - {'origin_path': 'scripts/data/config/nyse_2012.csv', 'final_path': 'nyse_2012_ts.parquet', 'metadata': {'type': 'delimited', 'columns_width': [6, 24, 7, 7, 7, 7, 7], 'columns_name': ['stock', 'transaction_date', 'open_price', 'close_price', 'max_price', 'min_price', 'variation'], 'additional_data': {}}, 'partition_by': 'stock'}
+[2024-04-08T17:16:08.003+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 192, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 209, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/scripts/main.py", line 13, in procesar_archivo
+    strategy = get_strategy(config['metadata']['type'])
+  File "/opt/airflow/scripts/strategies/read.py", line 36, in get_strategy
+    raise ValueError(f"Invalid strategy: {strategy_type}")
+ValueError: Invalid strategy: delimited
+[2024-04-08T17:16:08.014+0000] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=seed_initial_data, task_id=insert_coins_into_db, execution_date=20240408T171605, start_date=20240408T171607, end_date=20240408T171608
+[2024-04-08T17:16:08.021+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 25 for task insert_coins_into_db (Invalid strategy: delimited; 10195)
+[2024-04-08T17:16:08.037+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2024-04-08T17:16:08.055+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check
