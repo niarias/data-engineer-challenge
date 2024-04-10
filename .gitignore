@@ -1,7 +1,7 @@
-logs/*
+airflow-pandas-version/logs/*
 config/*
 # Ignote all __pycache__ directories
 __pycache__/
 # Ignore all .pyc files
 *.pyc
-scripts/data/output/*
+airflow-pandas-version/scripts/data/output/*
