@@ -17,7 +17,7 @@ with DAG(
     )
 
     read_csv_file = PythonOperator(
-        task_id="insert_coins_into_db",
+        task_id="read_and_process_fixed_width_file",
         python_callable=procesar_archivo,
         op_kwargs={
             "params": {
