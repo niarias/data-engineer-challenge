@@ -41,3 +41,7 @@ nyse_2012_ts.txt, de ancho fijo, sin cabecera y con las siguientes longitudes de
 El parquet de salida debe estar particionado por la columna stock.
 
 
+Version Colab : 
+https://colab.research.google.com/drive/1sRrYALkh082gojaAXv6MHfLNjvVsv8T1?usp=sharing
+
+
